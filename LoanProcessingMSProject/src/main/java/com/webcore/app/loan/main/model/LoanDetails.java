@@ -4,6 +4,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 @Entity
 public class LoanDetails {
@@ -11,13 +18,21 @@ public class LoanDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int loanId;
+	@NotNull
 	private String loanCode;
+	@NotNull
 	private int customerId; 
+	@NotNull
 	private int leadId;
+	@NotNull
 	private double loanAmount;
+	@NotNull
 	private double rateOfInterest;
+	@NotNull
 	private int tenure;
+	@NotNull
 	private double marginmoney;
+	@Value(value = "0.0")
 	private double advanceEMI;
 	private double processingFees;
 	private double totalInterest;

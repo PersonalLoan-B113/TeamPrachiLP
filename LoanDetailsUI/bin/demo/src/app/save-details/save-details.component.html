@@ -1,0 +1,108 @@
+<div class="row">
+
+  <div class="col-md-6 save-container">
+
+    <h2 style="margin: auto">Save Details </h2>
+    <form [formGroup]="saveForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="loanCode">loan Code:</label>
+        <input type="text" class="form-control" formControlName="loanCode" id="loanCode" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['loanCode'].hasError('required') && saveForm.controls['loanCode'].touched">Loan Code is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="customerId">Customer Id:</label>
+        <input type="number" class="form-control" formControlName="customerId" id="customerId" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['customerId'].hasError('required') && saveForm.controls['customerId'].touched">Customer Id is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="leadId">Lead Id:</label>
+        <input type="number" class="form-control" formControlName="leadId" id="leadId" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['leadId'].hasError('required') && saveForm.controls['leadId'].touched">Lead Id is required</div>
+      </div>
+
+      
+      <div class="form-group">
+        <label for="loanAmount">loan Amount:</label>
+        <input type="number" class="form-control" formControlName="loanAmount" id="loanAmount" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['loanAmount'].hasError('required') && saveForm.controls['loanAmount'].touched">Loan Amount is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="rateOfInterest">Rate Of Interest:</label>
+        <input type="number" class="form-control" formControlName="rateOfInterest" id="rateOfInterest" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['rateOfInterest'].hasError('required') && saveForm.controls['rateOfInterest'].touched">Rate of Interest is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="tenure">Tenure</label>
+        <input type="number" class="form-control" formControlName="tenure" id="tenure" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['tenure'].hasError('required') && saveForm.controls['tenure'].touched">Tenure is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="marginmoney">Margin Money:</label>
+        <input type="number" class="form-control" formControlName="marginmoney" id="marginmoney" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['marginmoney'].hasError('required') && saveForm.controls['marginmoney'].touched">Margin Money is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="advanceEMI">Advance EMI:</label>
+        <input type="number" class="form-control" formControlName="advanceEMI" id="advanceEMI" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="processingFees">Processing Fees:</label>
+        <input type="number" class="form-control" formControlName="processingFees" id="processingFees" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="totalInterest">Total Interest:</label>
+        <input type="number" class="form-control" formControlName="totalInterest" id="totalInterest" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="sanctionDate">SanctionDate:</label>
+        <input type="date" class="form-control" formControlName="sanctionDate" id="sanctionDate" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['sanctionDate'].hasError('required') && saveForm.controls['sanctionDate'].touched">Margin Money is required</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="remark">Remark:</label>
+        <input type="text" class="form-control" formControlName="remark" id="remark" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="statuscode">Statuscode:</label>
+        <input type="number" class="form-control" formControlName="statuscode" id="statuscode" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['statuscode'].hasError('required') && saveForm.controls['statuscode'].touched">Status is required</div>
+      </div>
+
+      <button class="btn btn-success" [disabled]="saveForm.invalid">Save</button>
+        <div *ngIf="invalidLogin" class="error">
+          <div>Invalid credentials.</div>
+        </div>
+<!-- 
+<div class="details">
+<pre>
+    Loan Code       : <input type="text"  [(ngModel)] = "ld.loanCode"  placeholder="Enter loan Code"><br>
+    Customer Id     : <input type="number" [(ngModel)] = "ld.customerId"><br>
+    Lead Id         : <input type= "number" [(ngModel)]="ld.leadId"><br>
+    Loan Amount     : <input type="text" [(ngModel)] ="ld.loanAmount"><br>
+    Rate of Interest: <input type="text" [(ngModel)] ="ld.rateOfInterest"><br>
+    Tenure          : <input type="number" [(ngModel)] ="ld.tenure"><br>
+    Margin Money    : <input type="text" [(ngModel)] ="ld.marginmoney"><br>
+    Advance EMI     : <input type="text" [(ngModel)] ="ld.advanceEMI"><br>
+    Processing Fees : <input type="text" [(ngModel)] ="ld.processingFees"><br>
+    Total Interest  : <input type="text" [(ngModel)] ="ld.totalInterest"><br>
+    Sanction Date   : <input type="text" [(ngModel)] ="ld.sanctionDate"><br>
+    Remark          : <input type="text" [(ngModel)] ="ld.remark"><br>
+    Status Code     : <input type="number" [(ngModel)] ="ld.statuscode"><br>
+  <div class="buttons">
+    <input type="submit" value="Submit" (click)="saveDetails(ld)">
+  </div> -->
+</form>
+  </div>
+  </div>
