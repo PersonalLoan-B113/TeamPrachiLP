@@ -1,0 +1,97 @@
+<div class="row">
+
+  <div class="col-md-6 save-container">
+
+    <h2 style="margin: auto">Save Details </h2>
+    <form [formGroup]="saveForm" (ngSubmit)="onSubmit()">
+
+      <div class="form-group">
+        <label for="loanCode">loan Code:</label>
+        <input type="text" class="form-control" formControlName="loanCode" id="loanCode" readonly>
+        
+      </div>
+
+      <div class="form-group">
+        <label for="customerId">Customer Id:</label>
+        <input type="number" class="form-control" formControlName="customerId" id="customerId" readonly>
+       
+      </div>
+
+      <div class="form-group">
+        <label for="leadId">Lead Id:</label>
+        <input type="number" class="form-control" formControlName="leadId" id="leadId" readonly>
+        
+      </div>
+
+      
+      <div class="form-group">
+        <label for="loanAmount">loan Amount:</label>
+        <input type="number" class="form-control" formControlName="loanAmount" id="loanAmount" readonly>
+       
+      </div>
+
+      <div class="form-group">
+        <label for="rateOfInterest">Rate Of Interest:</label>
+        <input type="number" class="form-control" formControlName="rateOfInterest" id="rateOfInterest" autocomplete="off" readonly>
+        <div class="error" *ngIf="saveForm.controls['rateOfInterest'].hasError('required') && saveForm.controls['rateOfInterest'].touched">Rate of Interest is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="tenure">Tenure</label>
+        <input type="number" class="form-control" formControlName="tenure" id="tenure" [(ngModel)]="tenure"  autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['tenure'].hasError('required') && saveForm.controls['tenure'].touched">Tenure is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="marginmoney">Margin Money:</label>
+        <input type="number" class="form-control" formControlName="marginmoney" id="marginmoney" [(ngModel)]="marginmoney" readonly >
+        <div class="error" *ngIf="saveForm.controls['marginmoney'].hasError('required') && saveForm.controls['marginmoney'].touched">Margin Money is required</div>
+      </div>
+
+      <div class="form-group">
+        <label for="advanceEMI">Advance EMI:</label>
+        <input type="number" class="form-control" formControlName="advanceEMI" id="advanceEMI" [(ngModel)]="advanceEMI" readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="processingFees">Processing Fees:</label>
+        <input type="number" class="form-control" formControlName="processingFees" id="processingFees" readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="totalInterest">Total Interest:</label>
+        <input type="number" class="form-control" formControlName="totalInterest" id="totalInterest" [(ngModel)]="totalInterest" readonly>
+      </div>
+
+      <div class="form-group">
+        <label for="sanctionDate">SanctionDate:</label>
+        <input type="date" class="form-control" formControlName="sanctionDate" id="sanctionDate" autocomplete="off">
+        <div class="error" *ngIf="saveForm.controls['sanctionDate'].hasError('required') && saveForm.controls['sanctionDate'].touched">Margin Money is required</div>
+      </div>
+      
+      <div class="form-group">
+        <label for="remark">Remark:</label>
+        <input type="text" class="form-control" formControlName="remark" id="remark" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <label for="statuscode">Status Code:</label>
+
+        <select (change)='statusValue($event)' >
+          <option value=300>300</option>
+          <option value=301>301</option>
+          <option value=302>302</option> 
+        </select> 
+      </div>
+    
+    
+      <button class="btn btn-dark" [disabled]="saveForm.invalid">Save</button>
+        <div *ngIf="invalidLogin" class="error">
+          <div>Invalid credentials.</div>
+        </div>
+
+        <button class="btn btn-dark" (click)="calculateData()">Calculate</button>
+        <!-- <input type = "submit" value="Submit" (click)="calculateData()"> -->
+</form>
+  </div>
+  </div>

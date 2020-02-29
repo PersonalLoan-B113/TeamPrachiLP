@@ -38,7 +38,7 @@ public class LoanDetails {
 	private double totalInterest;
 	private String sanctionDate;
 	private String remark; 
-	private int statuscode;
+	private int statusCode;
 	
 	public int getLoanId() {
 		return loanId;
@@ -118,11 +118,11 @@ public class LoanDetails {
 	public void setRemark(String remark) {
 		this.remark = remark;
 	}
-	public int getStatuscode() {
-		return statuscode;
+	public int getStatusCode() {
+		return statusCode;
 	}
-	public void setStatuscode(int statuscode) {
-		this.statuscode = statuscode;
+	public void setStatusCode(int statusCode) {
+		this.statusCode = statusCode;
 	}
 	
 	
