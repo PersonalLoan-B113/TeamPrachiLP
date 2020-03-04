@@ -10,13 +10,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./get-details.component.css']
 })
 export class GetDetailsComponent implements OnInit {
+  cust: CustomerDetail[];
 
   constructor(private se: ServicemService,private route:Router) { }
   isVisisble:boolean=false;
-  cust: CustomerDetail[];
+  
 
   ngOnInit() {
-     this.se.getData().subscribe(res => { 
+    
+    this.se.getData().subscribe(res => { 
       this.cust = res ;
       console.log(this.cust);
    },
@@ -24,13 +26,22 @@ export class GetDetailsComponent implements OnInit {
    }
    );
 
+   this.se.customerdetails=this.cust;
+   console.log(this.se.customerdetails);
   }
 
-   radioChangeHandler(cus)
-   {
-     console.log('called');
-   this.se.cd=cus;
-   console.log(this.se.cd);
-   this.route.navigate(['save']);
-   }
+  goToBtwn300()
+  {
+   this.route.navigate(['getCustBtwn300'])
+  }
+
+  goToAbove302()
+  {
+    this.route.navigate(['getCustAbove300'])
+  }
+  goToBelow300()
+  {
+    this.route.navigate(['getCustBelow300'])
+
+  }
   }

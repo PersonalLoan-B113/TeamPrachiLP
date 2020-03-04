@@ -124,9 +124,4 @@ public class LoanDetails {
 	public void setStatusCode(int statusCode) {
 		this.statusCode = statusCode;
 	}
-	
-	
-	
-	
-
 }

@@ -1,0 +1,46 @@
+
+  <div class="table-responsive">
+
+<table class="table table-striped table-dark">
+    <thead>
+      <tr>
+        <th scope="col">Loan Id</th>
+        <th scope="col">Loan Code</th>
+        <th scope="col">Customer Id</th>
+        <th scope="col">Lead Id</th>
+        <th scope="col">loan Amount</th>
+        <th scope="col">Rate of Interest</th>
+        <th scope="col">Tenure</th>
+        <th scope="col">Margin Money</th>
+        <th scope="col">Advance EMI</th>
+        <th scope="col">Processing Fees</th>
+        <th scope="col">Total Interest</th>
+        <th scope="col">Sanction Date</th>
+        <th scope="col">Remark</th>
+        <th scope="col">Status Code</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = 'let loanDet of lD'>
+        <td>{{loanDet.loanId}}</td>
+        <td>{{loanDet.loanCode}}</td>
+        <td>{{loanDet.customerId}}</td>
+        <td>{{loanDet.leadId}}</td>
+        <td>{{loanDet.loanAmount}}</td>
+        <td>{{loanDet.rateOfInterest}}</td>
+        <td>{{loanDet.tenure}}</td>
+        <td>{{loanDet.marginmoney}}</td>
+        <td>{{loanDet.advanceEMI}}</td>
+        <td>{{loanDet.processingFees}}</td>
+        <td>{{loanDet.totalInterest}}</td>
+        <td>{{loanDet.sanctionDate}}</td>
+        <td>{{loanDet.remark}}</td>
+        <td>{{loanDet.statusCode}}</td>
+        
+      </tr>
+</tbody>
+</table>
+
+<button class="btn btn-dark" (click)= "goToFrontPage()"> DONE </button>
+</div>

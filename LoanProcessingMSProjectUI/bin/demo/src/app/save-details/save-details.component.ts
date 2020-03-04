@@ -56,9 +56,13 @@ export class SaveDetailsComponent implements OnInit {
     this.advanceEMI = (this.saveForm.controls.loanAmount.value + (this.saveForm.controls.loanAmount.value*(12/100))/(this.saveForm.controls.tenure.value)*12);
     console.log(this.advanceEMI);
   }
+
   
+  customerId1:number;
+  status:number;
   onSubmit() {
     if (this.saveForm.invalid) {
+      alert("This form is invalid");
       return;
     }
     else{
@@ -75,11 +79,21 @@ export class SaveDetailsComponent implements OnInit {
     totalInterest : this.totalInterest,
     sanctionDate: this.saveForm.controls.sanctionDate.value,
     remark : this.saveForm.controls.remark.value,
-    statusCode : this.se.status
+    statusCode : this.saveForm.controls.statusCode.value
     }
-    console.log("i m in save details")
+    console.log("i m in save details");
+    console.log(loginPayload);
+    
+    this.customerId1 = this.saveForm.controls.customerId.value;
+    this.status=this.saveForm.controls.statusCode.value;
+    this.se.custStatusCode(this.status,this.customerId1).subscribe();
      this.se.saveData(this.saveForm).subscribe();
     console.log(" i m in end of save details");
   }
+ }
+
+ seeLoanDetails()
+ {
+   this.router.navigate(['getloan']);
  }
 }

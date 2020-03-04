@@ -1,27 +1,7 @@
-<div class="container">
-<div class="table-responsive">
-    <table class="table">
-        <tr>
-        <th class="table-success">Select</th>
-         <th class="table-active"> Customer Id </th>
-        <th class="table-primary"> Lead Id </th>
-        <th class="table-danger"> Loan Code </th>
-        <th class="table-secondary"> Loan Amount </th>
-        <th class="table-warning"> Status Code</th>
 
-    </tr>
 
-    <tr *ngFor = 'let cus of cust'>
-        <th class="table-success"><input type="radio" value= "{{cus.custId}}" (click)= radioChangeHandler(cus) ></th>
-    <td class="table-active" > {{cus.custId}}</td>
-    <td class="table-primary">{{cus.leadId}} </td>
-    <th class="table-danger"> {{cus.loanNo}} </th>
-    <td class="table-secondary">{{cus.loanAmount}}</td>
-    <th class="table-warning"> {{cus.statusCode}}</th>
-
-</tr>
-</table>
-
-</div>
-
+<div class="buttons">
+<button class="btn btn-dark"(click) ="goToBtwn300()"> In Loan Processing </button>
+<button class="btn btn-dark" (click)= "goToAbove302()"> Loan Processed</button>
+<button class="btn btn-dark"(click)= "goToBelow300()"> Yet To Process </button>
 </div>
